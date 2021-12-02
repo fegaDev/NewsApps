@@ -1,0 +1,43 @@
+<div class="list-group mt-5">
+  <h2 class="forms-style mt-5">País y Categoría</h2>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <form (ngSubmit)="buscarNoticia()">
+        <div class="form-group">
+          <select
+            class="form-select form-control-lg mt-3"
+            name="categoria"
+            [(ngModel)]="seleccionCategoria"
+          >
+            <option
+              [value]="categoria.value"
+              *ngFor="let categoria of categorias"
+            >
+              {{ categoria.nombre }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select
+            class="form-select mt-3 mb-3"
+            [(ngModel)]="seleccionPais"
+            name="pais"
+          >
+            <option
+              name="pais"
+              [value]="pais.value"
+              *ngFor="let pais of paises"
+            >
+              {{ pais.nombre }}
+            </option>
+          </select>
+        </div>
+        <div class="d-grid gap-2 mb-4 col-6 mx-auto">
+          <button type="submit" class="btn btn-outline-info mt-2 btn-style">
+            Busqueda
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
