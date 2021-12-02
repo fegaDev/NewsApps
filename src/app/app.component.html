@@ -1,5 +1,6 @@
 <app-nav [titulo]="'Buscador de Noticias'"></app-nav>
 <div class="container">
     <app-forms (target)="buscarNoticia($event)"></app-forms>
+    <app-spinner *ngIf="cargar"></app-spinner>
     <app-list [listado]="listado"></app-list>
 </div>
